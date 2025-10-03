@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-dhmgsggl-gitops
+  description: This is GitOps manifest for go-dhmgsggl   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-dhmgsggl
+    backstage.io/kubernetes-id: go-dhmgsggl 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-dhmgsggl-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-dhmgsggl
